@@ -254,6 +254,7 @@ public class ProcessorService implements PageProcessor {
       Html html = new Html(keyWorkListStr);
       return String.join(",", html.xpath("//span/a/font/text()").all());
     } catch (Exception e) {
+        errorList.add(KEY_WORD.getCode());
       error("关键字", itemId, e);
     }
     return null;
